@@ -34,7 +34,7 @@ command -v node
 
 ```bash
 sudo useradd --system --create-home --shell /usr/sbin/nologin workbench
-sudo git clone https://github.com/zhaungshenme/-.git /opt/workbench
+sudo git clone https://github.com/zhaungshenme/cyberbullying-workbench.git /opt/workbench
 sudo chown -R workbench:workbench /opt/workbench
 sudo install -d -m 750 -o workbench -g workbench /var/lib/workbench
 sudo install -d -m 750 -o root -g workbench /etc/workbench

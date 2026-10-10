@@ -48,7 +48,7 @@ flowchart LR
 
 支持在 Linux 服务器安装工作台，客户端无需安装 Python、模型或 Dify。
 
-1. 获取源码：`git clone https://github.com/zhaungshenme/-.git workbench`。
+1. 获取源码：`git clone https://github.com/zhaungshenme/cyberbullying-workbench.git workbench`。
 2. 按 [服务器部署指南](docs/DEPLOYMENT.md) 安装 Python / Node / pnpm 依赖，生成私有配置，启动前后端。
 3. 管理员使用首次生成的临时口令登录，修改密码，建立其他角色账号。
 4. 研判员输入文本或导入 [格式样例](examples/README.md)，创建任务。
