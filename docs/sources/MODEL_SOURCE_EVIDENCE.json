@@ -1,0 +1,149 @@
+{
+  "checked_date": "2026-10-10",
+  "timezone": "Asia/Shanghai",
+  "model_download_performed": false,
+  "training_performed": false,
+  "publisher_huggingface_endpoint_status": "direct requests timed out; no publisher weights were downloaded",
+  "sources": [
+    {
+      "publisher_url": "https://github.com/QwenLM/Qwen3",
+      "fetched_url": "https://api.github.com/repos/QwenLM/Qwen3/readme",
+      "publisher_endpoint": true,
+      "local_evidence_file": "qwen3_readme_api.txt",
+      "bytes": 24732,
+      "sha256": "0b2c2bb11806f7a00c8465f2586e2e99f15de28622fd5c9b70b83ae1ab18c75d",
+      "note": "Official publisher README; confirms original series and 2507 repo identities."
+    },
+    {
+      "publisher_url": "https://github.com/QwenLM/Qwen3.5",
+      "fetched_url": "https://api.github.com/repos/QwenLM/Qwen3.5/readme",
+      "publisher_endpoint": true,
+      "local_evidence_file": "qwen3_5_official.txt",
+      "bytes": 14334,
+      "sha256": "a71ec46607f81d6056336fb0a8431a26a1c7d8db6ac568a0c021c36f1ed3c92e",
+      "note": "Official publisher README; confirms 2026-08-14 Qwen3.8-27B release and links 2.4T model card."
+    },
+    {
+      "publisher_url": "https://huggingface.co/Qwen/Qwen3-32B",
+      "fetched_url": "https://hf-mirror.com/api/models/Qwen/Qwen3-32B",
+      "publisher_endpoint": false,
+      "local_evidence_file": "qwen3_32b_mirror.json",
+      "bytes": 9982,
+      "sha256": "019155ee8510c4183beee372c9c5f38921d611edb99a3dca170ffbd316d83a02",
+      "note": "Mirror metadata used after publisher endpoint timed out; revision requires publisher recheck on download server."
+    },
+    {
+      "publisher_url": "https://huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "fetched_url": "https://hf-mirror.com/api/models/Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "publisher_endpoint": false,
+      "local_evidence_file": "qwen3_235b_mirror.json",
+      "bytes": 13638,
+      "sha256": "f95f29c5bb0d85d6ce71dd3270b69619ca3e7544f2ff1a959830d520656a234f",
+      "note": "Mirror metadata used after publisher endpoint timed out; revision requires publisher recheck on download server."
+    },
+    {
+      "publisher_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "fetched_url": "https://hf-mirror.com/api/models/Qwen/Qwen3.8-27B",
+      "publisher_endpoint": false,
+      "local_evidence_file": "qwen3_8_27b_mirror.json",
+      "bytes": 24111,
+      "sha256": "2e20a8123e3fee005c70ad9ad59b63278e7e25d340bf412341196dd0ca4dfcef",
+      "note": "Mirror metadata; card license apache-2.0 and image-text-to-text architecture."
+    },
+    {
+      "publisher_url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "fetched_url": "https://hf-mirror.com/api/models/Qwen/Qwen3.8-2.4T-A95B",
+      "publisher_endpoint": false,
+      "local_evidence_file": "qwen3_8_24t_mirror.json",
+      "bytes": 28377,
+      "sha256": "f8a14a750a2aae5eee70b82cdcd3750d60797d023bcad983e73520db42ce4d2c",
+      "note": "Mirror metadata; custom license, not Apache."
+    },
+    {
+      "publisher_url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/blob/main/LICENSE",
+      "fetched_url": "https://hf-mirror.com/Qwen/Qwen3.8-2.4T-A95B/raw/207bd685a7e3696cfaff12ded7c6a7ea0f88c996/LICENSE",
+      "publisher_endpoint": false,
+      "local_evidence_file": "qwen3_8_max_license.txt",
+      "bytes": 3390,
+      "sha256": "a136bc4137ef3d7a7a54963164a47270f73e497917728ea0f4407a0115db1290",
+      "note": "Custom Qwen3.8-Max license with scale/commercial conditions. Read original at deployment."
+    },
+    {
+      "publisher_url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/examples/train_lora/qwen3_lora_sft.yaml",
+      "fetched_url": "https://api.github.com/repos/hiyouga/LLaMA-Factory/contents/examples/train_lora/qwen3_lora_sft.yaml",
+      "publisher_endpoint": true,
+      "local_evidence_file": "llamafactory_lora_api.txt",
+      "bytes": 907,
+      "sha256": "783c247613e0c46c4b4ea5c6627acd5387d939af91f22a9d6a9efdb4996147ae",
+      "note": "Official qwen3_nothink SFT template."
+    },
+    {
+      "publisher_url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/data/README.md",
+      "fetched_url": "https://api.github.com/repos/hiyouga/LLaMA-Factory/contents/data/README.md",
+      "publisher_endpoint": true,
+      "local_evidence_file": "llamafactory_data_readme.txt",
+      "bytes": 13741,
+      "sha256": "ab8669383cc3c6a1b64ed9a48ba5819c74c5d38bac6b7a41615337da543de508",
+      "note": "Official dataset_info and ShareGPT mapping."
+    },
+    {
+      "publisher_url": "https://github.com/hiyouga/LLaMA-Factory/blob/ce9dc9e072f80fa3abe0989d4ab90da25f083438/src/llamafactory/hparams/model_args.py",
+      "fetched_url": "https://raw.githubusercontent.com/hiyouga/LLaMA-Factory/ce9dc9e072f80fa3abe0989d4ab90da25f083438/src/llamafactory/hparams/model_args.py",
+      "publisher_endpoint": true,
+      "local_evidence_file": "llamafactory_model_args_pinned.txt",
+      "bytes": 33005,
+      "sha256": "4a4d0873b1121526ac395ea7b7b4c992f0e793e277e4e22e0952d1e1056b3c39",
+      "note": "Pinned quantization fields and model revision field."
+    },
+    {
+      "publisher_url": "https://github.com/hiyouga/LLaMA-Factory/blob/ce9dc9e072f80fa3abe0989d4ab90da25f083438/src/llamafactory/hparams/finetuning_args.py",
+      "fetched_url": "https://raw.githubusercontent.com/hiyouga/LLaMA-Factory/ce9dc9e072f80fa3abe0989d4ab90da25f083438/src/llamafactory/hparams/finetuning_args.py",
+      "publisher_endpoint": true,
+      "local_evidence_file": "llamafactory_finetune_args.txt",
+      "bytes": 24218,
+      "sha256": "a30c983bbd09f2622ee7165e55e16b3a18a0a2500777ff7f4beeb7d9f8194ecd",
+      "note": "Pinned LoRA fields."
+    },
+    {
+      "publisher_url": "https://github.com/hiyouga/LLaMA-Factory/blob/ce9dc9e072f80fa3abe0989d4ab90da25f083438/pyproject.toml",
+      "fetched_url": "https://raw.githubusercontent.com/hiyouga/LLaMA-Factory/ce9dc9e072f80fa3abe0989d4ab90da25f083438/pyproject.toml",
+      "publisher_endpoint": true,
+      "local_evidence_file": "llamafactory_pyproject.txt",
+      "bytes": 3382,
+      "sha256": "d2d044de25f84d319338de30299437ee882650e2a998af50f617bfbb5964becf",
+      "note": "Python >=3.11; dependency ranges; no old optional extras."
+    },
+    {
+      "publisher_url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0",
+      "fetched_url": "https://api.github.com/repos/vllm-project/vllm/releases/latest",
+      "publisher_endpoint": true,
+      "local_evidence_file": "vllm_release.json",
+      "bytes": 60446,
+      "sha256": "df40689efa21e23f94ad1d5d9f6c1d56f92958b65de98d8ef2c73252ecbf4d17",
+      "note": "Latest observed release 0.31.0, 2026-10-05."
+    },
+    {
+      "publisher_url": "https://docs.vllm.ai/en/stable/features/structured_outputs/",
+      "fetched_url": "https://docs.vllm.ai/en/stable/features/structured_outputs/",
+      "publisher_endpoint": true,
+      "local_evidence_file": "vllm_stable_structured.txt",
+      "bytes": 727313,
+      "sha256": "94a2d5b9eee189e946b63549a102def7fc17e56e75a1587d80ee0e5ef23aa229",
+      "note": "Current structured_outputs JSON Schema fields, removal of guided_json."
+    },
+    {
+      "publisher_url": "https://recipes.vllm.ai/Qwen/Qwen3.8-27B",
+      "fetched_url": "https://recipes.vllm.ai/Qwen/Qwen3.8-27B",
+      "publisher_endpoint": true,
+      "local_evidence_file": "vllm_qwen38_recipe.txt",
+      "bytes": 1936964,
+      "sha256": "581c5cadeeef10fa0d2af2b71e6be270ec2ff27333e0662703bea1340871ab77",
+      "note": "Official vLLM deployment recipe for current 27B candidate."
+    }
+  ],
+  "templates": {
+    "source_commit": "ce9dc9e072f80fa3abe0989d4ab90da25f083438",
+    "format_demonstrations": "synthetic, not human gold; validated using actual backend service.schema.parse_model_observation",
+    "syntax_verification": "Three YAML files parsed with existing PyYAML 6.0.3; JSON parsed; synthetic outputs validated against actual backend; LLaMA-Factory parser/real training not executed."
+  }
+}

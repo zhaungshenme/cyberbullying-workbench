@@ -1,0 +1,24 @@
+{
+  "repo": "aggiejiang/SWSR",
+  "url": "https://github.com/aggiejiang/SWSR",
+  "branch": "main",
+  "commit": "7b320184da8f9dd6d366dfe726c6b3e12ac92f77",
+  "license": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "paths": [
+    "LICENSE",
+    "README.md",
+    "SWSR/SexComment.csv",
+    "SWSR/SexWeibo.csv",
+    "SexHateLex/SexHateLex.txt"
+  ],
+  "readme": "# SWSR: A Chinese Dataset and Lexicon for Online Sexism Detection\n\n## Overview\n\nOur repository presents the first Chinese sexism dataset -- **Sina Weibo Sexism Review (SWSR) dataset** -- containing sexism-related posts collected from Sina Weibo platform, as well as a large Chinese lexicon **SexHateLex**. The SWSR dataset can be exploited for building computational methods to identify and investigate online, gender-related abusive language. The SexHateLex lexicon can also support detection and analysis of sexist contents.\n\nPlease find more details in our [paper work](https://www.sciencedirect.com/science/article/abs/pii/S2468696421000604) and earlier released dataset versions [here](https://doi.org/10.5281/zenodo.4773875).\n\n## Data Format\n\n### SWSR Dataset\n\nSWSR dataset consists of two files:  `SexWeibo.csv` and `SexComment.csv`, corresponding to 1,527 weibos and 8,969 comments.\n\n**SexWeibo.csv**\n\n* weibo_id: a string of weibo ID\n* weibo_text: a string of weibo text\n* keyword: contains  the  sexist  keyword(s)  extracted  from  the weibo. Not every weibo has corresponding keyword(s) \n* user_gender: the gender of user\n* user_location: the location of user\n* user_follower: number of users who follow this user's account\n* user_following: number of users whom this user follows\n* weibo_like: number of like for the weibo\n* weibo_comment: number of comment for the weibo\n* weibo_repost: number of repost for the weibo\n* weibo_date: the date and time when the weibo is posted\n                \n\n**SexComment.csv**\n\n* weibo_id: the weibo id where the comment is collected\n* comment_text: a string of comment text \n* gender: the gender of commenter\n* location: the location of commenter\n* like: number of like for this comment\n* date: the date and time when the comment is posted\n* label: the comment is sexist(1) or non-sexist(0)\n* category: categorise sexism into four classes -- Stereotype based on Appearance(SA), Stereotype based on Cultural Background (SCB), MicroAggression (MA) and Sexual Offense (SO)\n* target:  the type of target who are attacked -- Individual (I) or Generic (G)\n\n### SexHateLex Lexicon\n\nThe SexHateLex lexicon contains a list of 3,016 abusive and sexist terms in `SexHateLex.txt`.\n\n## Reference\n\nOur work has been published in the Journal of Online Social Networks and Media. If you are interested in this dataset, please cite: \n\n```\nAiqi Jiang, Xiaohan Yang, Yang Liu, Arkaitz Zubiaga, \nSWSR: A Chinese dataset and lexicon for online sexism detection, \nOnline Social Networks and Media, \nVolume 27, \n2022, \n100182, \nISSN 2468-6964, \nhttps://doi.org/10.1016/j.osnem.2021.100182.\n```\n\nIf you have any queries or suggestions about our work, please contact us via aiqi.jiang@yahoo.com. We also welcome any ideas or cooperation about online abuse especially gender-based abuse and cross-lingual scenarios.\n   \n\n\n",
+  "verified_on": "2026-10-10",
+  "readme_api_url": "https://api.github.com/repos/aggiejiang/SWSR/readme",
+  "LICENSE": "MIT License\n\nCopyright (c) 2022 Aiqi Jiang\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+}

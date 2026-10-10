@@ -1,0 +1,52 @@
+{
+  "verified_on": "2026-10-10",
+  "data_downloaded": false,
+  "sources": [
+    {
+      "repository": "aggiejiang/SWSR",
+      "url": "https://github.com/aggiejiang/SWSR",
+      "revision": "7b320184da8f9dd6d366dfe726c6b3e12ac92f77",
+      "verification_date": "2026-10-10",
+      "repository_license_spdx": "MIT",
+      "snapshot_sha256": "c0a51e15f315d975d9f4c55077ca6edfcd79dffe38cfaabe9af2cdeb394f0ec9",
+      "snapshot_file": "aggiejiang__SWSR.json",
+      "method": "GitHub REST metadata, author README, available LICENSE, recursive file tree; no corpus download"
+    },
+    {
+      "repository": "DUT-lujunyu/ToxiCN",
+      "url": "https://github.com/DUT-lujunyu/ToxiCN",
+      "revision": "91d8f6a449967bd310364544d535d6310e45043b",
+      "verification_date": "2026-10-10",
+      "repository_license_spdx": null,
+      "snapshot_sha256": "affee0f5f14e9a01d3c8f1d4b0af8ad72668295580a61225cd3f195996cd3074",
+      "snapshot_file": "DUT-lujunyu__ToxiCN.json",
+      "method": "GitHub REST metadata, author README, available LICENSE, recursive file tree; no corpus download"
+    },
+    {
+      "repository": "shenmeyemeifashengguo/STATE-ToxiCN",
+      "url": "https://github.com/shenmeyemeifashengguo/STATE-ToxiCN",
+      "revision": "eea5cd92f94bdd1ded4b38b1d264246531baf714",
+      "verification_date": "2026-10-10",
+      "repository_license_spdx": null,
+      "snapshot_sha256": "56310372da104ab4a2fb24dab1621cec128a8b765293a72614b40d9294bcc930",
+      "snapshot_file": "shenmeyemeifashengguo__STATE-ToxiCN.json",
+      "method": "GitHub REST metadata, author README, available LICENSE, recursive file tree; no corpus download"
+    },
+    {
+      "repository": "thu-coai/COLDataset",
+      "url": "https://github.com/thu-coai/COLDataset",
+      "revision": "a0c55a945497ab58e94aef491180e1cf88ffb864",
+      "verification_date": "2026-10-10",
+      "repository_license_spdx": "Apache-2.0",
+      "snapshot_sha256": "386dc4ff93c80134d0de39032e9e8e3141b5a20f4dd62b766f555b1fc0400875",
+      "snapshot_file": "thu-coai__COLDataset.json",
+      "method": "GitHub REST metadata, author README, available LICENSE, recursive file tree; no corpus download"
+    }
+  ],
+  "limits": [
+    "No per-comment original-platform validation",
+    "No corpus count recomputation",
+    "No production authorization asserted",
+    "SWSR Zenodo API failed DNS resolution"
+  ]
+}

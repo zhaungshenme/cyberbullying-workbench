@@ -1,0 +1,18 @@
+# Only needed when Dify is on a different trusted server.
+# Replace the upstream hostname and approved CA bundle.
+server {
+    listen 127.0.0.1:18080;
+    server_name localhost;
+    client_max_body_size 16k;
+    access_log off;
+    location /v1/ {
+        proxy_pass https://dify.internal.example.org/v1/;
+        proxy_set_header Host dify.internal.example.org;
+        proxy_set_header Authorization $http_authorization;
+        proxy_ssl_server_name on;
+        proxy_ssl_verify on;
+        proxy_ssl_trusted_certificate /etc/ssl/certs/dify-ca.pem;
+        proxy_read_timeout 90s;
+    }
+    location / { return 404; }
+}

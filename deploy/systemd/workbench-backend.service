@@ -1,0 +1,18 @@
+[Unit]
+Description=Cyberbullying provenance workbench backend
+After=network.target
+
+[Service]
+Type=simple
+User=workbench
+Group=workbench
+WorkingDirectory=/opt/workbench/backend
+EnvironmentFile=/etc/workbench/backend.env
+ExecStart=/opt/workbench/.venv/bin/python -m uvicorn app:app --host 127.0.0.1 --port 18788 --workers 1 --no-access-log
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

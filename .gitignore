@@ -1,0 +1,41 @@
+# Secrets, evidence, runtime databases and model artifacts
+.env
+.env.*
+!.env.example
+private/
+secrets/
+runtime/
+data/
+datasets/
+models/
+checkpoints/
+logs/
+*.sqlite*
+*.db
+*.db-*
+*.pem
+*.key
+*.p12
+*.pfx
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.zip
+*.tar*
+*.log
+
+# Generated dependencies and build output
+node_modules/
+.next/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.tsbuildinfo
+.DS_Store
+
+# Upstream archival snapshot is not the application
+webapp-text-generator-*/

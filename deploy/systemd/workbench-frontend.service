@@ -1,0 +1,19 @@
+[Unit]
+Description=Cyberbullying provenance workbench frontend
+After=network.target workbench-backend.service
+
+[Service]
+Type=simple
+User=workbench
+Group=workbench
+WorkingDirectory=/opt/workbench/frontend
+Environment=NODE_ENV=production
+EnvironmentFile=/etc/workbench/frontend.env
+ExecStart=/usr/bin/node node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 3001
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

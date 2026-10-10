@@ -1,0 +1,10 @@
+# Merge into the original, unquantized base; never merge into 4-bit weights.
+model_name_or_path: /srv/models/Qwen3-32B
+adapter_name_or_path: /srv/artifacts/cb-qwen3-32b-qlora/run-001
+template: qwen3
+enable_thinking: false
+trust_remote_code: false
+export_dir: /srv/artifacts/cb-qwen3-32b-merged/run-001
+export_size: 5
+export_device: cpu
+export_legacy_format: false

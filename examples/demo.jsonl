@@ -1,0 +1,4 @@
+{"case_id":"synthetic-demo-criticism","task":"language_observation_decision","messages":[{"message_id":"demo-c1","author_key":"demo-a","reply_to":null,"timestamp":null,"text":"这个流程太慢了，请公开处理进度和依据。"}]}
+{"case_id":"synthetic-demo-insult","task":"language_observation_decision","messages":[{"message_id":"demo-a1","author_key":"demo-b","reply_to":null,"timestamp":null,"text":"你就是个废物，什么都不会。"}]}
+{"case_id":"synthetic-demo-report","task":"language_observation_decision","messages":[{"message_id":"demo-r1","author_key":"demo-c","reply_to":null,"timestamp":null,"text":"有人一直给我发“你就是个废物”，我想举报这种辱骂，请告诉我如何保留证据。"}]}
+{"case_id":"synthetic-demo-context","task":"language_observation_decision","messages":[{"message_id":"demo-u1","author_key":null,"reply_to":null,"timestamp":null,"text":"又来了，你知道我说的是谁。"}]}

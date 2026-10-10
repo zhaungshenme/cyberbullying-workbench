@@ -1,0 +1,404 @@
+{
+  "version": "0.5.0",
+  "kind": "app",
+  "dependencies": [],
+  "app": {
+    "name": "网暴行为溯源追踪工作台｜任务提交",
+    "description": "业务服务接收原始材料；Dify编排任务引用；受限模型服务推理；服务端校验逐字证据。",
+    "mode": "workflow",
+    "icon": "shield",
+    "icon_type": "emoji",
+    "icon_background": "#E8F0FE",
+    "use_icon_as_answer_icon": false
+  },
+  "workflow": {
+    "conversation_variables": [],
+    "environment_variables": [
+      {
+        "id": "afe236fb-f814-4f16-98aa-29745499dd01",
+        "name": "backend_token",
+        "value_type": "secret",
+        "value": "",
+        "description": "导入后在Dify设置为CB_SERVICE_TOKEN，导出不含秘密"
+      }
+    ],
+    "features": {
+      "opening_statement": "",
+      "suggested_questions": [],
+      "suggested_questions_after_answer": {
+        "enabled": false
+      },
+      "text_to_speech": {
+        "enabled": false
+      },
+      "speech_to_text": {
+        "enabled": false
+      },
+      "retriever_resource": {
+        "enabled": false
+      },
+      "sensitive_word_avoidance": {
+        "enabled": false
+      },
+      "file_upload": {
+        "enabled": false
+      }
+    },
+    "graph": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "custom",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "positionAbsolute": {
+            "x": 0,
+            "y": 0
+          },
+          "width": 244,
+          "height": 100,
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "data": {
+            "type": "start",
+            "title": "任务输入",
+            "desc": "禁止输入案件原文",
+            "variables": [
+              {
+                "variable": "window_id",
+                "label": "window_id",
+                "type": "text-input",
+                "required": true,
+                "max_length": 200,
+                "options": []
+              },
+              {
+                "variable": "input_hash",
+                "label": "input_hash",
+                "type": "text-input",
+                "required": true,
+                "max_length": 200,
+                "options": []
+              },
+              {
+                "variable": "case_version",
+                "label": "case_version",
+                "type": "number",
+                "required": true,
+                "max_length": 200,
+                "options": []
+              },
+              {
+                "variable": "pipeline_version",
+                "label": "pipeline_version",
+                "type": "text-input",
+                "required": true,
+                "max_length": 200,
+                "options": []
+              },
+              {
+                "variable": "idempotency_key",
+                "label": "idempotency_key",
+                "type": "text-input",
+                "required": true,
+                "max_length": 200,
+                "options": []
+              }
+            ]
+          }
+        },
+        {
+          "id": "health",
+          "type": "custom",
+          "position": {
+            "x": 300,
+            "y": 0
+          },
+          "positionAbsolute": {
+            "x": 300,
+            "y": 0
+          },
+          "width": 244,
+          "height": 100,
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "data": {
+            "type": "http-request",
+            "title": "检查材料服务",
+            "desc": "请求业务材料服务，仅编号、哈希和状态；部署前渲染实际地址",
+            "method": "get",
+            "url": "http://materials.internal:18788/integration/health",
+            "authorization": {
+              "type": "api-key",
+              "config": {
+                "type": "bearer",
+                "api_key": "{{#env.backend_token#}}"
+              }
+            },
+            "headers": "Content-Type:application/json",
+            "params": "",
+            "ssl_verify": true,
+            "timeout": {
+              "connect": 10,
+              "read": 15,
+              "write": 15
+            },
+            "retry_config": {
+              "retry_enabled": false,
+              "max_retries": 0,
+              "retry_interval": 1000
+            },
+            "body": {
+              "type": "none",
+              "data": []
+            }
+          }
+        },
+        {
+          "id": "check",
+          "type": "custom",
+          "position": {
+            "x": 600,
+            "y": 0
+          },
+          "positionAbsolute": {
+            "x": 600,
+            "y": 0
+          },
+          "width": 244,
+          "height": 100,
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "data": {
+            "type": "if-else",
+            "title": "接口响应检查",
+            "desc": "失败保留明确状态",
+            "cases": [
+              {
+                "case_id": "true",
+                "logical_operator": "and",
+                "conditions": [
+                  {
+                    "id": "b80b9abe-6ec5-43be-9b0b-e6531a14db72",
+                    "varType": "number",
+                    "variable_selector": [
+                      "health",
+                      "status_code"
+                    ],
+                    "comparison_operator": "=",
+                    "value": "200"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "submit",
+          "type": "custom",
+          "position": {
+            "x": 900,
+            "y": 0
+          },
+          "positionAbsolute": {
+            "x": 900,
+            "y": 0
+          },
+          "width": 244,
+          "height": 100,
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "data": {
+            "type": "http-request",
+            "title": "提交幂等分析任务",
+            "desc": "请求业务材料服务，仅编号、哈希和状态；部署前渲染实际地址",
+            "method": "post",
+            "url": "http://materials.internal:18788/integration/analysis-jobs",
+            "authorization": {
+              "type": "api-key",
+              "config": {
+                "type": "bearer",
+                "api_key": "{{#env.backend_token#}}"
+              }
+            },
+            "headers": "Content-Type:application/json",
+            "params": "",
+            "ssl_verify": true,
+            "timeout": {
+              "connect": 10,
+              "read": 15,
+              "write": 15
+            },
+            "retry_config": {
+              "retry_enabled": false,
+              "max_retries": 0,
+              "retry_interval": 1000
+            },
+            "body": {
+              "type": "json",
+              "data": [
+                {
+                  "key": "",
+                  "type": "text",
+                  "value": "{\"window_id\":\"{{#start.window_id#}}\",\"input_hash\":\"{{#start.input_hash#}}\",\"case_version\":{{#start.case_version#}},\"pipeline_version\":\"{{#start.pipeline_version#}}\",\"idempotency_key\":\"{{#start.idempotency_key#}}\"}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "end",
+          "type": "custom",
+          "position": {
+            "x": 1200,
+            "y": 0
+          },
+          "positionAbsolute": {
+            "x": 1200,
+            "y": 0
+          },
+          "width": 244,
+          "height": 100,
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "data": {
+            "type": "end",
+            "title": "返回任务状态",
+            "desc": "输出不包含原文或模型判断",
+            "outputs": [
+              {
+                "variable": "result",
+                "value_selector": [
+                  "submit",
+                  "body"
+                ],
+                "value_type": "string"
+              },
+              {
+                "variable": "http_status",
+                "value_selector": [
+                  "submit",
+                  "status_code"
+                ],
+                "value_type": "number"
+              }
+            ]
+          }
+        },
+        {
+          "id": "error",
+          "type": "custom",
+          "position": {
+            "x": 900,
+            "y": 200
+          },
+          "positionAbsolute": {
+            "x": 900,
+            "y": 200
+          },
+          "width": 244,
+          "height": 100,
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "data": {
+            "type": "end",
+            "title": "返回服务异常",
+            "desc": "输出不包含原文或模型判断",
+            "outputs": [
+              {
+                "variable": "result",
+                "value_selector": [
+                  "health",
+                  "body"
+                ],
+                "value_type": "string"
+              },
+              {
+                "variable": "http_status",
+                "value_selector": [
+                  "health",
+                  "status_code"
+                ],
+                "value_type": "number"
+              }
+            ]
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "start-source-health",
+          "type": "custom",
+          "source": "start",
+          "target": "health",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "data": {
+            "isInIteration": false,
+            "sourceType": "custom",
+            "targetType": "custom"
+          }
+        },
+        {
+          "id": "health-source-check",
+          "type": "custom",
+          "source": "health",
+          "target": "check",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "data": {
+            "isInIteration": false,
+            "sourceType": "custom",
+            "targetType": "custom"
+          }
+        },
+        {
+          "id": "check-true-submit",
+          "type": "custom",
+          "source": "check",
+          "target": "submit",
+          "sourceHandle": "true",
+          "targetHandle": "target",
+          "data": {
+            "isInIteration": false,
+            "sourceType": "custom",
+            "targetType": "custom"
+          }
+        },
+        {
+          "id": "check-false-error",
+          "type": "custom",
+          "source": "check",
+          "target": "error",
+          "sourceHandle": "false",
+          "targetHandle": "target",
+          "data": {
+            "isInIteration": false,
+            "sourceType": "custom",
+            "targetType": "custom"
+          }
+        },
+        {
+          "id": "submit-source-end",
+          "type": "custom",
+          "source": "submit",
+          "target": "end",
+          "sourceHandle": "source",
+          "targetHandle": "target",
+          "data": {
+            "isInIteration": false,
+            "sourceType": "custom",
+            "targetType": "custom"
+          }
+        }
+      ],
+      "viewport": {
+        "x": 0,
+        "y": 0,
+        "zoom": 0.7
+      }
+    }
+  }
+}

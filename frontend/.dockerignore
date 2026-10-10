@@ -1,0 +1,6 @@
+node_modules
+.next
+.env*
+!.env.example
+*.tsbuildinfo
+webapp-text-generator-923ec812adcd0fad95f53ccce8e0f56962a7ac5c
